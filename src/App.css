@@ -1,15 +1,44 @@
+p {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 2x;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #a80000, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: white;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: glitch .2s linear infinite;
   height: 40vmin;
   pointer-events: none;
 }
 
 .App-header {
+  background: url(./illuminati.png) no-repeat center center fixed;
   background-color: #282c34;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,17 +46,59 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  animation: glitch .2s linear infinite;
 }
+
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes glitch {
+  0%
+	{
+		position: 0 0;
+		filter: hue-rotate(0deg);
+	}
+	10%
+	{
+		position: 5px 0;
+	}
+	20%
+	{
+		position: -5px 0;
+	}
+	30%
+	{
+		position: 15px 0;
+	}
+	40%
+	{
+		position: -5px 0;
+	}
+	50%
+	{
+		position: -25px 0;
+	}
+	60%
+	{
+		position: -50px 0;
+	}
+	70%
+	{
+		position: 0 -20px;
+	}
+	80%
+	{
+		position: -60px -20px;
+	}
+	81%
+	{
+		position: 0 0;
+	}
+	100%
+	{
+		position: 0 0;
+		filter: hue-rotate(360deg);
+	}
 }
